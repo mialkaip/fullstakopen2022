@@ -29,22 +29,48 @@ const Total = (props) => {
 }
 
 const App = () => {
+  /*
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+  const part1 = {
+    name: 'Fundamentals of React',
+    exercises: 10
+  }
+
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7
+  }
+  const part3 = {
+    name: 'State of a component',
+    exercises: 14
+  }
+  */
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
 
   return (
     <>
-      <Header kurssi = {course} />
-      <Content osa1 = {part1} harjoitukset1 = {exercises1}
-               osa2 = {part2} harjoitukset2 = {exercises2}
-               osa3 = {part3} harjoitukset3 = {exercises3} />
+      <Header kurssi = {course.name} />
+      <Content osa1 = {course.parts[0].name} harjoitukset1 = {course.parts[0].exercises}
+               osa2 = {course.parts[1].name} harjoitukset2 = {course.parts[1].exercises}
+               osa3 = {course.parts[2].name} harjoitukset3 = {course.parts[2].exercises} />
 
-      <Total luku1 = {exercises1} luku2 = {exercises2} luku3 ={exercises3} />
+      <Total luku1 = {course.parts[0].exercises} luku2 = {course.parts[1].exercises} luku3 ={course.parts[2].exercises} />
     </>
   )
 }
